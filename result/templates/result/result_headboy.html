@@ -17,12 +17,7 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
-    <style>
-      canvas {
-        max-width: 800px;
-        margin: auto;
-      }
-    </style>
+  
       <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
       <!-- endinject -->
       <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" />
@@ -232,7 +227,7 @@
                   <div class="card">
                     <div class="card-body">
                       <h2 class="card-title  " style="font-size: 38px;">Result for Head Boy</h2>
-                      <canvas id="voteChart" style="margin-top: 100px;" width="800" height="400"></canvas>
+                      <canvas id="voteChart" style="margin-top: 20px;" width="800" height="400"></canvas>
                     </div>
                   </div>
                 </div>
@@ -272,8 +267,8 @@
               </div>
           </div>
 
-          <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 200px;">
+          <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true" style="height: 730px;">
+            <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 400px;">
               <div class="modal-content w-100">
                 <div class="modal-header bg-success text-white">
                   <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
@@ -400,7 +395,7 @@
               options: options,
               
           });
-  const finalData = [100, 110,4];
+  const finalData = [10, 3,4];
   let currentData = [0, 0,0];
   let interval;
 
