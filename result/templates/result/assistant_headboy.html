@@ -1,0 +1,509 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Skydash Admin</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/css/vendor.bundle.base.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendors/mdi/css/materialdesignicons.min.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+  <style>
+    
+  </style>
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" />
+  </head>
+  <body class="sidebar-icon-only">
+    <div class="container-scroller">
+      <!-- partial:../../partials/_navbar.html -->
+      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
+    <a class="navbar-brand brand-logo me-5" href="../../index.html"> 
+    <a class="navbar-brand brand-logo-mini" href="../../index.html"> </a>
+  </div>
+  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+      <span class="icon-menu"></span>
+    </button>
+    <ul class="navbar-nav mr-lg-2">
+      <li class="nav-item nav-search d-none d-lg-block">
+        <div class="input-group">
+          <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+            <span class="input-group-text" id="search">
+              <i class="icon-search"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+        </div>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-nav-right">
+      <li class="nav-item dropdown">
+        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
+          <i class="icon-bell mx-0"></i>
+          <span class="count"></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+          <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-success">
+                <i class="ti-info-alt mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">Application Error</h6>
+              <p class="font-weight-light small-text mb-0 text-muted"> Just now </p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-warning">
+                <i class="ti-settings mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">Settings</h6>
+              <p class="font-weight-light small-text mb-0 text-muted"> Private message </p>
+            </div>
+          </a>
+          <a class="dropdown-item preview-item">
+            <div class="preview-thumbnail">
+              <div class="preview-icon bg-info">
+                <i class="ti-user mx-0"></i>
+              </div>
+            </div>
+            <div class="preview-item-content">
+              <h6 class="preview-subject font-weight-normal">New user registration</h6>
+              <p class="font-weight-light small-text mb-0 text-muted"> 2 days ago </p>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li class="nav-item nav-profile dropdown">
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
+          <img src="../../assets/images/faces/face28.jpg" alt="profile" />
+        </a>
+        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <a class="dropdown-item">
+            <i class="ti-settings text-primary"></i> Settings </a>
+          <a class="dropdown-item">
+            <i class="ti-power-off text-primary"></i> Logout </a>
+        </div>
+      </li>
+      <li class="nav-item nav-settings d-none d-lg-flex">
+        <a class="nav-link" href="#">
+          <i class="icon-ellipsis"></i>
+        </a>
+      </li>
+    </ul>
+    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+      <span class="icon-menu"></span>
+    </button>
+  </div>
+</nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="../../index.html">
+        <i class="icon-grid menu-icon"></i>
+        <span class="menu-title">Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <i class="icon-layout menu-icon"></i>
+        <span class="menu-title">UI Elements</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="ui-basic">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/buttons.html">Buttons</a></li>
+          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/dropdowns.html">Dropdowns</a></li>
+          <li class="nav-item"> <a class="nav-link" href="../../pages/ui-features/typography.html">Typography</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+        <i class="icon-columns menu-icon"></i>
+        <span class="menu-title">Form elements</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="form-elements">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"><a class="nav-link" href="../../pages/forms/basic_elements.html">Basic Elements</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+        <i class="icon-bar-graph menu-icon"></i>
+        <span class="menu-title">Charts</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="charts">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+        <i class="icon-grid-2 menu-icon"></i>
+        <span class="menu-title">Tables</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="tables">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/tables/basic-table.html">Basic table</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
+        <i class="icon-contract menu-icon"></i>
+        <span class="menu-title">Icons</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="icons">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">User Pages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="auth">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
+          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
+        <i class="icon-ban menu-icon"></i>
+        <span class="menu-title">Error pages</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="error">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-404.html"> 404 </a></li>
+          <li class="nav-item"> <a class="nav-link" href="../../pages/samples/error-500.html"> 500 </a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="../../../docs/documentation.html">
+        <i class="icon-paper menu-icon"></i>
+        <span class="menu-title">Documentation</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<audio id="audioPlayer" src="{% static 'bgm.mp3' %}" preload="auto"></audio>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-lg-9 grid-margin  ">
+                <div class="card">
+                  <div class="card-body">
+                    <h2 class="card-title  " style="font-size: 38px;">Result for Assistant Head Boy</h2>
+                    <canvas id="voteChart" style="margin-top: 100px;" width="1200" height="490"></canvas>
+                  </div>
+                </div>
+              </div>
+               
+               
+            </div>
+             
+             
+          </div>
+        
+
+          <div class="modal fade" id="winnerModal" style="width: 60%;" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">Reject Reason</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form method="POST" id="rejectForm">
+                            {% csrf_token %}
+                            <div class="mb-4">
+                                <label for="password" class="form-label text-dark py-2">Reason</label>
+                                <textarea class="form-control" name="reason"  ></textarea>
+                              </div>
+                              <div class="mb-4">
+                                
+                                <input type="submit" class="btn btn-danger"  id="">
+                                <input type="text" name="" id="assign_id_input">
+                              </div>
+                            
+                            
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+            <div class="modal-content w-100">
+              <div class="modal-header bg-success text-white">
+                <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
+              </div>
+              <div class="modal-body text-center">
+                <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">ASSISTANT HEAD BOY</p>
+                <p class="h2" style="font-size: 45px;"><strong>Sheikh Mohammed Zain!</strong></p>
+                <img src="{% static 'winners/zain.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
+
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+<script>
+
+Chart.register(ChartDataLabels);
+// Initialize the chart using Chart.js
+const ctx = document.getElementById('voteChart').getContext('2d');
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+const data = {
+            labels: ['ASHMIL', 'SINAN', 'ZAIN','NOTA' ],
+            
+            datasets: [{
+                label: '',
+                
+                data: [0, 0,0,0],
+                  // Start with all values as 0
+                backgroundColor: [
+                    '#b0f98b ',
+                    ' #dea4f5 ',
+                    // 'pink',
+                    // 'orange',
+                    // 'rgba(153, 102, 255, 0.2)',
+                  'rgba(145, 115, 240)'
+                ],
+                borderColor: [
+                    'rgba(233, 22, 105 )',
+                   'rgba(233, 22, 105 )',
+                   'rgba(233, 22, 105 )',
+                ],
+                borderWidth: 2
+            }]
+        };
+
+        // Set up chart options with animation
+        const options = {
+    responsive: true,
+    animation: {
+        duration: 700,
+        easing: 'easeOutQuad',
+    },
+    plugins: {
+      legend: {
+      display: false,  // Hide the legend completely, including the icon
+    },
+        datalabels: {
+          align: 'top',
+            anchor: 'end',
+            // align: 'start',
+            color: 'red', 
+            font: {
+                size: 50,
+                weight: '700'
+            }
+        },
+        tooltip: {
+            callbacks: {
+                label: function (tooltipItem) {
+                    return 'Votes: ' + tooltipItem.raw + ' votes';
+                }
+            }
+        }
+    },
+    scales: {
+        x: {
+            ticks: {
+                color: 'blue',
+                font: {
+                    size: 50,
+                    weight: 'bold',
+                    style: 'italic',
+                    family: 'Arial'
+                }
+            }
+        },
+        y: {
+          grace: '40%' ,
+            beginAtZero: true,
+            ticks: {
+                color: 'black',
+                font: {
+                    size: 14
+                }
+            }
+        }
+    }
+};
+
+
+        // Create the chart
+        // const ctx = document.getElementById('voteChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // Use bar chart type
+            data: data,
+            options: options,
+            
+        });
+const finalData = [1, 2,4,8];
+let currentData = [0, 0,0,0];
+let interval;
+
+interval = setInterval(() => {
+    let completed = true;
+
+    currentData = currentData.map((value, index) => {
+        if (value < finalData[index]) {
+            completed = false;
+
+            // Increment with a dynamic feel but avoid overshooting
+            let diff = finalData[index] - value;
+            let increment = Math.min(Math.ceil(Math.random() * 3), diff); // 1-3 steps
+            return value + increment;
+        }
+        return value;
+    });
+
+    myChart.data.datasets[0].data = currentData;
+    myChart.update();
+
+    if (completed) {
+        clearInterval(interval);
+
+        // 🔒 Ensure final value is exactly hardcoded one
+        myChart.data.datasets[0].data = finalData;
+        myChart.update();
+        console.log("Animation done. Final values set.");
+
+        setTimeout(() => {
+          $("#resultModal").modal("show");
+          
+
+
+          document.getElementById('resultModal').addEventListener('shown.bs.modal', function () {
+            let duration = 10 * 1000;
+            let animationEnd = Date.now() + duration;
+            let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
+      
+            let interval = setInterval(function () {
+              let timeLeft = animationEnd - Date.now();
+      
+              if (timeLeft <= 0) {
+                return clearInterval(interval);
+              }
+      
+              let particleCount = 50 * (timeLeft / duration);
+              // Since particles fall down, start a bit higher than random
+              confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+            }, 200);
+          });
+
+
+
+
+
+
+
+
+          
+        }, 1000);
+    }
+}, 800);
+
+window.onload = function() {
+        const audio = document.getElementById('audioPlayer');
+        audio.play(); // Start the audio playback
+
+        audio.onplay = function() {
+            console.log("Audio is playing, chart is updating...");
+        };
+
+        // Stop the audio when animation completes
+        setTimeout(() => {
+            audio.pause(); // Stop the audio after animation duration
+            console.log('Audio stopped');
+        }, animationDuration);
+    };
+
+
+
+
+
+</script>
+
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    {% comment %} <script src="{% static 'assets/vendors/js/vendor.bundle.base.js' %}"></script> {% endcomment %}
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'assets/vendors/chart.js/chart.umd.js' %}"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'assets/js/off-canvas.js' %}"></script>
+    <script src="{% static 'assets/js/template.js' %}"></script>
+    <script src="{% static 'assets/js/settings.js' %}"></script>
+    <script src="{% static 'assets/js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'assets/js/chart.js' %}"></script>
+    <!-- End custom js for this page-->
+  </body>
+</html>
