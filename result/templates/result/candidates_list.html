@@ -21,35 +21,9 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}" />
   </head>
-  <body class="sidebar-icon-only" style="background-color: aquamarine;">
+  <body class="sidebar-icon-only"  >
      
-      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-    <a class="navbar-brand brand-logo me-5" href=""><img src="{% static 'logo.png' %}"></a>
-   
-  </div>
-  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-      <span class="icon-menu"></span>
-    </button>
-    <ul class="navbar-nav mr-lg-2">
-      <li class="nav-item nav-search d-none d-lg-block">
-        <div class="input-group">
-          <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-            <span class="input-group-text" id="search">
-              <i class="icon-search"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav navbar-nav-right">
-       
-    </ul>
-    
-  </div>
-</nav>
+      
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_sidebar.html -->
@@ -163,9 +137,9 @@
              <div class="container">
 
              
-            <div class="row">
-                <div class="position-relative mb-5 text-center">
-                    <h2 class="mb-0">Candidates List ({{position | title}})</h2>
+            <div class="row ">
+                <div class="position-relative mb-3 text-center">
+                    <h2    style="margin-bottom:  50px;">Candidates List ({{position | title}})</h2>
                     
                   {% if position == 'headboy' %}
                   <a href="{% url 'result:result_headboy'  %}" class="btn btn-primary position-absolute end-0 top-50 translate-middle-y">Publish Result</a>
@@ -193,13 +167,15 @@
                   </div>
                   
                 {% for candidate in candidates_list %}
-                <div class="col-md-3 col-lg-4">
+                <div class="col-md-4 col-lg-4">
             
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ candidate.pic.url}}" class="card-img-top" style="max-height: 200px;min-height: 240px; max-width: 300px;min-width: 300px;" alt="...">
+                    <div class="card" style="width: 20rem;">
+                        <img src="{{ candidate.pic.url}}" class="card-img-top" style="max-height: 240px;min-height: 240px; max-width: 300px;min-width: 300px;" alt="...">
                         <div class="card-body">
-                          <h5 class="card-title ">{{candidate.cand_name | title }}</h5>
-                          <p style="font-size: 20px;" class="card-text  text-bold">{{candidate.cand_class | title}} {{candidate.cand_division | title}}</p>
+                          <h3 class="card-title " style="color: #dd1979; font-weight: bolder;font-size: 25px;">{{candidate.cand_name | title }} ({{candidate.cand_adm}})</h3>
+                          <h3 class="card-title text-center " style=" font-weight: bolder;font-size: 25px;">{{candidate.cand_class | title}} - {{candidate.cand_division | title}}</h3>
+
+                         
 
         
                           <!-- <a href="#" class="btn btn-primary">Remove</a> -->

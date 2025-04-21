@@ -4,6 +4,7 @@ from django.db import models
 class Candidates(models.Model):
     cand_name = models.CharField(max_length = 50)
     cand_class = models.CharField(max_length = 50)
+    cand_adm = models.CharField(max_length = 50)
     cand_division = models.CharField(max_length = 100)
     cand_post = models.CharField(max_length = 100)
     pic = models.ImageField(upload_to = 'candidates/')
