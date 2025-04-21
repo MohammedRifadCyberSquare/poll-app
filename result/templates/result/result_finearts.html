@@ -27,92 +27,7 @@
   <body class="sidebar-icon-only">
     <div class="container-scroller">
       <!-- partial:../../partials/_navbar.html -->
-      <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-  <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-start">
-    <a class="navbar-brand brand-logo me-5" href="../../index.html"> 
-    <a class="navbar-brand brand-logo-mini" href="../../index.html"> </a>
-  </div>
-  <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-      <span class="icon-menu"></span>
-    </button>
-    <ul class="navbar-nav mr-lg-2">
-      <li class="nav-item nav-search d-none d-lg-block">
-        <div class="input-group">
-          <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
-            <span class="input-group-text" id="search">
-              <i class="icon-search"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
-        </div>
-      </li>
-    </ul>
-    <ul class="navbar-nav navbar-nav-right">
-      <li class="nav-item dropdown">
-        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
-          <i class="icon-bell mx-0"></i>
-          <span class="count"></span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-          <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <div class="preview-icon bg-success">
-                <i class="ti-info-alt mx-0"></i>
-              </div>
-            </div>
-            <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">Application Error</h6>
-              <p class="font-weight-light small-text mb-0 text-muted"> Just now </p>
-            </div>
-          </a>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <div class="preview-icon bg-warning">
-                <i class="ti-settings mx-0"></i>
-              </div>
-            </div>
-            <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">Settings</h6>
-              <p class="font-weight-light small-text mb-0 text-muted"> Private message </p>
-            </div>
-          </a>
-          <a class="dropdown-item preview-item">
-            <div class="preview-thumbnail">
-              <div class="preview-icon bg-info">
-                <i class="ti-user mx-0"></i>
-              </div>
-            </div>
-            <div class="preview-item-content">
-              <h6 class="preview-subject font-weight-normal">New user registration</h6>
-              <p class="font-weight-light small-text mb-0 text-muted"> 2 days ago </p>
-            </div>
-          </a>
-        </div>
-      </li>
-      <li class="nav-item nav-profile dropdown">
-        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-          <img src="../../assets/images/faces/face28.jpg" alt="profile" />
-        </a>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-          <a class="dropdown-item">
-            <i class="ti-settings text-primary"></i> Settings </a>
-          <a class="dropdown-item">
-            <i class="ti-power-off text-primary"></i> Logout </a>
-        </div>
-      </li>
-      <li class="nav-item nav-settings d-none d-lg-flex">
-        <a class="nav-link" href="#">
-          <i class="icon-ellipsis"></i>
-        </a>
-      </li>
-    </ul>
-    <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-      <span class="icon-menu"></span>
-    </button>
-  </div>
-</nav>
+       
       <!-- partial -->
       <div class="container-fluid page-body-wrapper">
         <!-- partial:../../partials/_sidebar.html -->
@@ -228,8 +143,8 @@
               <div class="col-lg-9 grid-margin  ">
                 <div class="card">
                   <div class="card-body">
-                    <h2 class="card-title  " style="font-size: 38px;">Result for Assistant Fine Arts</h2>
-                    <canvas id="voteChart" style="margin-top: 100px;" width="1200" height="490"></canvas>
+                    <h2 class="card-title  " style="font-size: 38px;">Result for Fine Arts</h2>
+                    <canvas id="voteChart" style="margin-top: 100px; margin-left: 10px" width="1200" height="490"></canvas>
                   </div>
                 </div>
               </div>
@@ -269,15 +184,19 @@
             </div>
         </div>
 
-        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true" style="height: 730px;">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 400px;">
             <div class="modal-content w-100">
               <div class="modal-header bg-success text-white">
                 <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
               </div>
               <div class="modal-body text-center">
-                <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">FINE ARTS MINISTER</p>
-                <p class="h2" style="font-size: 45px;"><strong>Shayan Ahmed PK!</strong></p>
+                <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">FINE ARTS</p>
+                <p class="h2" style="font-size: 45px;"><strong>Shayan Ahmed PK!</strong>
+               
+                </p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 97 Votes)</p>
+
                 <img src="{% static 'winners/shayan.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
 
                
@@ -314,6 +233,7 @@ const data = {
             
             datasets: [{
                 label: '',
+               
                 
                 data: [0, 0,0,0],
                   // Start with all values as 0
@@ -397,7 +317,7 @@ const data = {
             options: options,
             
         });
-const finalData = [1, 2,4,8];
+const finalData =  [31,57,154,0];
 let currentData = [0, 0,0,0];
 let interval;
 

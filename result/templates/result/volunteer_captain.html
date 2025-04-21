@@ -269,15 +269,19 @@
             </div>
         </div>
 
-        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true" style="height: 730px;">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 400px;">
             <div class="modal-content w-100">
               <div class="modal-header bg-success text-white">
                 <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
               </div>
               <div class="modal-body text-center">
                 <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">VOLUNTEER CAPTAIN</p>
-                <p class="h2" style="font-size: 45px;"><strong>Muhammed Zeidanullah Khan!</strong></p>
+                <p class="h2" style="font-size: 45px;"><strong>Mohammed Zeidanullah Khan!</strong>
+               
+                </p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 28 Votes)</p>
+
                 <img src="{% static 'winners/zeidan.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
 
                
@@ -310,8 +314,8 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 
 
 const data = {
-            labels: ['MILHAN','MILHAN' ,'YOUSUF', 'ZAIDAN','NOTA' ],
-            
+            labels: ['MILHAN','YAHYA' ,'YOUSUF', 'ZAIDAN','NOTA' ],
+                    
             datasets: [{
                 label: '',
                 
@@ -397,7 +401,7 @@ const data = {
             options: options,
             
         });
-const finalData = [1, 2,4,8,17];
+const finalData = [50,28,69,97,2];
 let currentData = [0, 0,0,0,0];
 let interval;
 

@@ -225,11 +225,11 @@
         <div class="main-panel">
           <div class="content-wrapper">
             <div class="row">
-              <div class="col-lg-9 grid-margin  ">
+              <div class="col-lg-12 grid-margin  ">
                 <div class="card">
                   <div class="card-body">
-                    <h2 class="card-title  " style="font-size: 38px;">Result for Assistant Fine Arts</h2>
-                    <canvas id="voteChart" style="margin-top: 100px;" width="1400" height="500"></canvas>
+                    <h2 class="card-title  " style="font-size: 38px;">Result for Sports Minister</h2>
+                    <canvas id="voteChart" style="margin-top: 100px;" width="1500" height="500"></canvas>
                   </div>
                 </div>
               </div>
@@ -269,15 +269,19 @@
             </div>
         </div>
 
-        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true" style="height: 730px;">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 400px;">
             <div class="modal-content w-100">
               <div class="modal-header bg-success text-white">
                 <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
               </div>
               <div class="modal-body text-center">
                 <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">SPORTS MINISTER</p>
-                <p class="h2" style="font-size: 45px;"><strong>Hamza Izat Ullah!</strong></p>
+                <p class="h2" style="font-size: 45px;"><strong>Hamza Izat Ullah!</strong>
+               
+                </p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 1 Vote)</p>
+
                 <img src="{% static 'winners/hamza.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
 
                
@@ -310,11 +314,11 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 
 
 const data = {
-            labels: ['HAMZA', 'MUHAMMED', 'SUHAIL','YASEEN','NOTA' ],
+            labels: ['HAMZA', 'MUDDASSIR', 'SUHAIL','YASEEN','NOTA' ],
             
             datasets: [{
                 label: '',
-                
+               
                 data: [0, 0,0,0,0],
                   // Start with all values as 0
                 backgroundColor: [
@@ -397,7 +401,7 @@ const data = {
             options: options,
             
         });
-const finalData = [1, 2,4,8,9];
+const finalData =  [76,64,31,75,0];
 let currentData = [0, 0,0,0,0];
 let interval;
 

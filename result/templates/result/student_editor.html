@@ -272,15 +272,19 @@
             </div>
         </div>
 
-        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%;">
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true" style="height: 730px;">
+          <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80%; height: 400px;">
             <div class="modal-content w-100">
               <div class="modal-header bg-success text-white">
                 <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
               </div>
               <div class="modal-body text-center">
                 <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">STUDENT EDITOR</p>
-                <p class="h2" style="font-size: 45px;"><strong>Abaan Shyna Jasim!</strong></p>
+                <p class="h2" style="font-size: 45px;"><strong>Abaan Shyna Jasim!</strong>
+               
+                </p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 72 Votes)</p>
+
                 <img src="{% static 'winners/abaan.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
 
                
@@ -317,6 +321,7 @@ const data = {
             
             datasets: [{
                 label: '',
+                
                 
                 data: [0, 0,0],
                   // Start with all values as 0
@@ -400,7 +405,7 @@ const data = {
             options: options,
             
         });
-const finalData = [1, 2,4];
+const finalData = [157,85,4];
 let currentData = [0, 0,0];
 let interval;
 
