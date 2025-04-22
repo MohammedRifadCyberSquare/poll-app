@@ -229,7 +229,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h2 class="card-title  " style="font-size: 38px;">Result for Volunteer Captain</h2>
-                    <canvas id="voteChart" style="margin-top: 100px;" width="1200" height="490"></canvas>
+                    <canvas id="voteChart" style="margin-top: 100px;" width="1500" height="500"></canvas>
+                     
                   </div>
                 </div>
               </div>
@@ -276,20 +277,19 @@
                 <h5 class="modal-title mx-auto" style="font-size: 50px;" id="resultModalLabel">🎉 Congratulations!</h5>
               </div>
               <div class="modal-body text-center">
-                <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">VOLUNTEER CAPTAIN</p>
-                <p class="h2" style="font-size: 45px;"><strong>Mohammed Zeidanullah Khan!</strong>
+                <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">Fine Arts Minister</p>
+                <p class="h2" style="font-size: 45px;"><strong>Ayisha Lamia!</strong>
                
                 </p>
-                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 28 Votes)</p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 12 Votes)</p>
 
-                <img src="{% static 'winners/zeidan.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
+                <img src="{% static 'winners/lamia.jpeg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px; height: 300px;" />
 
                
               </div>
             </div>
           </div>
         </div>
-        
 
 
 
@@ -314,12 +314,12 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 
 
 const data = {
-            labels: ['MILHAN','YAHYA' ,'YOUSUF', 'ZAIDAN','NOTA' ],
-                    
+            labels: ['AFREEN', 'LAMIYA', 'FIZA','LIBA','SALEHA','NOTA' ],
+            
             datasets: [{
                 label: '',
                 
-                data: [0, 0,0,0,0],
+                data: [0, 0,0,0,0,0],
                   // Start with all values as 0
                 backgroundColor: [
                     '#b0f98b ',
@@ -372,7 +372,7 @@ const data = {
             ticks: {
                 color: 'blue',
                 font: {
-                    size: 41,
+                    size: 30,
                     weight: 'bold',
                     style: 'italic',
                     family: 'Arial'
@@ -401,8 +401,10 @@ const data = {
             options: options,
             
         });
-const finalData = [50,28,69,97,2];
-let currentData = [0, 0,0,0,0];
+const finalData = [59,105,93,69,36,0];
+// const finalData = [1,2,3,4,5,6];
+
+let currentData = [0, 0,0,0,0,0];
 let interval;
 
 interval = setInterval(() => {

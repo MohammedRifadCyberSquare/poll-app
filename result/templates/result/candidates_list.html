@@ -141,7 +141,7 @@
                 <div class="position-relative mb-3 text-center">
                     <h2    style="margin-bottom:  50px;">Candidates List ({{position | title}})</h2>
                     
-                  {% if position == 'headboy' %}
+                  {% if position == 'head girl' %}
                   <a href="{% url 'result:result_headboy'  %}" class="btn btn-primary position-absolute end-0 top-50 translate-middle-y">Publish Result</a>
 {% endif %}
 
@@ -155,7 +155,7 @@
 {% if position == 'volunteer captain' %}
 <a href="{% url 'result:result_volunteer_captain'  %}" class="btn btn-primary position-absolute end-0 top-50 translate-middle-y">Publish Result</a>
 {% endif %}       
-{% if position == 'assistant head' %}
+{% if position == 'assist head' %}
 <a href="{% url 'result:result_assistant_headboy'  %}" class="btn btn-primary position-absolute end-0 top-50 translate-middle-y">Publish Result</a>
 {% endif %}          
 {% if position == 'student editor' %}
@@ -172,7 +172,7 @@
                     <div class="card" style="width: 20rem;">
                         <img src="{{ candidate.pic.url}}" class="card-img-top" style="max-height: 240px;min-height: 240px; max-width: 300px;min-width: 300px;" alt="...">
                         <div class="card-body">
-                          <h3 class="card-title " style="color: #dd1979; font-weight: bolder;font-size: 25px;">{{candidate.cand_name | title }} ({{candidate.cand_adm}})</h3>
+                          <h3 class="card-title " style="color: #dd1979; font-weight: bolder;font-size: 25px;">{{candidate.cand_name | title }}  </h3>
                           <h3 class="card-title text-center " style=" font-weight: bolder;font-size: 25px;">{{candidate.cand_class | title}} - {{candidate.cand_division | title}}</h3>
 
                          

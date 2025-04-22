@@ -18,10 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
   <style>
-    canvas {
-      max-width: 800px;
-      margin: auto;
-    }
+    
   </style>
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
     <!-- endinject -->
@@ -232,7 +229,8 @@
                 <div class="card">
                   <div class="card-body">
                     <h2 class="card-title  " style="font-size: 38px;">Result for Student Editor</h2>
-                    <canvas id="voteChart" style="margin-top: 100px;" width="800" height="400"></canvas>
+                    <canvas id="voteChart" style="margin-top: 100px;" width="1500" height="500"></canvas>
+                     
                   </div>
                 </div>
               </div>
@@ -280,19 +278,18 @@
               </div>
               <div class="modal-body text-center">
                 <p class="h3" style="color: rgb(128,0,0); font-size: 40px;font-weight: bold;">STUDENT EDITOR</p>
-                <p class="h2" style="font-size: 45px;"><strong>Abaan Shyna Jasim!</strong>
+                <p class="h2" style="font-size: 45px;"><strong>Aysha Hiba!</strong>
                
                 </p>
-                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 72 Votes)</p>
+                 <p style="font-size: 30px; color: red; margin-top: 4px; font-weight: bolder;">(Won By 17 Votes)</p>
 
-                <img src="{% static 'winners/abaan.jpg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px;" />
+                <img src="{% static 'winners/hiba.jpeg' %}" alt="Winner" class="img-fluid mt-2" style="max-width: 430px; width: 100%; border-radius: 5px; height: 300px;" />
 
                
               </div>
             </div>
           </div>
         </div>
-        
 
 
 
@@ -317,13 +314,12 @@ const ctx = document.getElementById('voteChart').getContext('2d');
 
 
 const data = {
-            labels: ['Abaan', 'Emad', 'NOTA' ],
+            labels: ['AYISHA', 'AFREEN', 'HIBA','KEFIRA','SHAZIYA','NOTA' ],
             
             datasets: [{
                 label: '',
                 
-                
-                data: [0, 0,0],
+                data: [0, 0,0,0,0,0],
                   // Start with all values as 0
                 backgroundColor: [
                     '#b0f98b ',
@@ -376,7 +372,7 @@ const data = {
             ticks: {
                 color: 'blue',
                 font: {
-                    size: 50,
+                    size: 30,
                     weight: 'bold',
                     style: 'italic',
                     family: 'Arial'
@@ -405,8 +401,10 @@ const data = {
             options: options,
             
         });
-const finalData = [157,85,4];
-let currentData = [0, 0,0];
+ const finalData = [44,82,108,36,91,0]; 
+//const finalData = [1,2,3,4,5,6];
+
+let currentData = [0, 0,0,0,0,0];
 let interval;
 
 interval = setInterval(() => {
@@ -441,7 +439,7 @@ interval = setInterval(() => {
 
 
           document.getElementById('resultModal').addEventListener('shown.bs.modal', function () {
-            let duration = 20 * 1000;
+            let duration = 10 * 1000;
             let animationEnd = Date.now() + duration;
             let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
       
